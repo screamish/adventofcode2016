@@ -1,0 +1,56 @@
+name: advent2016
+version: '0.1.0.0'
+synopsis: Advent of Code 2016
+description: Please see README.md
+category: Web
+author: Simon Fenton
+maintainer: Simon Fenton
+copyright: 2016 Simon Fenton
+license: MIT
+github: screamish/advent2016
+extra-source-files:
+  - README.md
+ghc-options: -Wall
+
+default-extensions:
+  - OverloadedStrings
+  - RecordWildCards
+  - OverloadedLists
+  - ScopedTypeVariables
+  - TupleSections
+
+dependencies:
+  - base >=4.7 && <5
+  - interpolatedstring-perl6
+  - megaparsec
+  - text
+
+library:
+  source-dirs: src
+  ghc-options: []
+  exposed-modules:
+    - Advent.Day1
+
+executables:
+  advent2016:
+    main: Main.hs
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    source-dirs: app
+    dependencies: advent2016
+
+tests:
+  advent2016-test:
+    main: Spec.hs
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    source-dirs:
+      - src
+      - test
+    dependencies:
+      - hspec
+      - QuickCheck
