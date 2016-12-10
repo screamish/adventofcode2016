@@ -23,12 +23,14 @@ source-repository head
 library
   hs-source-dirs:
       src
-  default-extensions: OverloadedStrings RecordWildCards OverloadedLists ScopedTypeVariables TupleSections
+  default-extensions: OverloadedStrings RecordWildCards ScopedTypeVariables TupleSections LambdaCase
   ghc-options: -Wall
   build-depends:
       base >=4.7 && <5
+    , containers
     , interpolatedstring-perl6
     , megaparsec
+    , non-empty-sequence
     , text
   exposed-modules:
       Advent.Day1
@@ -40,12 +42,14 @@ executable advent2016
   main-is: Main.hs
   hs-source-dirs:
       app
-  default-extensions: OverloadedStrings RecordWildCards OverloadedLists ScopedTypeVariables TupleSections
+  default-extensions: OverloadedStrings RecordWildCards ScopedTypeVariables TupleSections LambdaCase
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
     , interpolatedstring-perl6
     , megaparsec
+    , non-empty-sequence
     , text
     , advent2016
   default-language: Haskell2010
@@ -56,12 +60,14 @@ test-suite advent2016-test
   hs-source-dirs:
       src
     , test
-  default-extensions: OverloadedStrings RecordWildCards OverloadedLists ScopedTypeVariables TupleSections
+  default-extensions: OverloadedStrings RecordWildCards ScopedTypeVariables TupleSections LambdaCase
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
     , interpolatedstring-perl6
     , megaparsec
+    , non-empty-sequence
     , text
     , hspec
     , QuickCheck

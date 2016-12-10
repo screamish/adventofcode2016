@@ -15,14 +15,16 @@ ghc-options: -Wall
 default-extensions:
   - OverloadedStrings
   - RecordWildCards
-  - OverloadedLists
   - ScopedTypeVariables
   - TupleSections
+  - LambdaCase
 
 dependencies:
   - base >=4.7 && <5
+  - containers
   - interpolatedstring-perl6
   - megaparsec
+  - non-empty-sequence
   - text
 
 library:
