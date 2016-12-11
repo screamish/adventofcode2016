@@ -4,7 +4,6 @@ import Control.Arrow (first, second, (>>>))
 import Control.Applicative ((<|>))
 import Data.Function ((&))
 import Data.Foldable
-import Data.Maybe (fromJust)
 import qualified Data.Set as Set
 import           Data.Sequence (ViewR(..))
 import qualified Data.Sequence as Seq
