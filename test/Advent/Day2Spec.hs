@@ -38,9 +38,9 @@ spec = do
   describe "Day2" $ do
     describe "Parsing" $ do
       it "ULL is [U, L, L]" $ do
-        parse "ULL" `shouldBe` [[U, L, L]]
+        parseMovements "ULL" `shouldBe` [[U, L, L]]
       it "can parse multilines" $ do
-        parse "ULL\nRRDDD" `shouldBe` [[U,L,L],[R,R,D,D,D]]
+        parseMovements "ULL\nRRDDD" `shouldBe` [[U,L,L],[R,R,D,D,D]]
 
     it "Up    from 5 is 2"  $ do keypad ! move (2,2) U  `shouldBe` "2"
     it "Down  from 5 is 8"  $ do keypad ! move (2,2) D  `shouldBe` "8"

@@ -6,7 +6,8 @@ import Control.Applicative ((<|>))
 import Control.Lens
 import Data.Function ((&))
 import Data.Foldable
-import Data.Map.Strict as Map
+import           Data.Map.Strict (Map, (!))
+import qualified Data.Map.Strict as Map
 import qualified Data.Set as Set
 import           Data.Sequence (ViewR(..))
 import qualified Data.Sequence as Seq
@@ -23,8 +24,8 @@ type Keypad = Map Key Text
 data Movement = U | L | D | R
   deriving (Show, Eq)
 
-parse :: Text -> [[Movement]]
-parse input =
+parseMovements :: Text -> [[Movement]]
+parseMovements input =
   case runParser parser "" $ input of
     Left err -> fail . parseErrorPretty $ err
     Right x -> x
@@ -63,6 +64,7 @@ five :: Key
 five = (2,2)
 
 decodePIN :: Text -> Text
-decodePIN input =
-  let movements = parse input
-  in foldMap (move )
+decodePIN =
+  let key = foldl' move
+      keys = tail . scanl key five
+  in foldMap (keypad !) . keys . parseMovements
