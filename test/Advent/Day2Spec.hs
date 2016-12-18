@@ -36,18 +36,25 @@ spec = do
 -- 7 8 9
 
   describe "Day2" $ do
+    let sample = [q|ULL
+RRDDD
+LURDL
+UUUUD|]
+
     describe "Parsing" $ do
       it "ULL is [U, L, L]" $ do
         parseMovements "ULL" `shouldBe` [[U, L, L]]
       it "can parse multilines" $ do
         parseMovements "ULL\nRRDDD" `shouldBe` [[U,L,L],[R,R,D,D,D]]
 
-    it "Up    from 5 is 2"  $ do keypad ! move (2,2) U  `shouldBe` "2"
-    it "Down  from 5 is 8"  $ do keypad ! move (2,2) D  `shouldBe` "8"
-    it "Left  from 5 is 4"  $ do keypad ! move (2,2) L  `shouldBe` "4"
-    it "Right from 5 is 6"  $ do keypad ! move (2,2) R  `shouldBe` "6"
-    it "Down  from 8 is 8"  $ do keypad ! move (3,2) D  `shouldBe` "8"
-    it "Right from 6 is 6"  $ do keypad ! move (2,3) R  `shouldBe` "6"
+    describe "Movement tests" $ do
+      let sut key movement = _keys squareKeypad ! move squareKeypad key movement
+      it "Up    from 5 is 2"  $ do sut (2,2) U  `shouldBe` "2"
+      it "Down  from 5 is 8"  $ do sut (2,2) D  `shouldBe` "8"
+      it "Left  from 5 is 4"  $ do sut (2,2) L  `shouldBe` "4"
+      it "Right from 5 is 6"  $ do sut (2,2) R  `shouldBe` "6"
+      it "Down  from 8 is 8"  $ do sut (3,2) D  `shouldBe` "8"
+      it "Right from 6 is 6"  $ do sut (2,3) R  `shouldBe` "6"
 
     it "The example given evaluates to 1985" $ do
       -- Suppose your instructions are:
@@ -64,7 +71,8 @@ spec = do
       -- move left, up, right, down, and left, ending with 8. Finally, you move up four
       -- times (stopping at "2"), then down once, ending with 5. So, in this example, the
       -- bathroom code is 1985.
-      decodePIN [q|ULL
-RRDDD
-LURDL
-UUUUD|] `shouldBe` "1985"
+      decodePIN squareKeypad sample `shouldBe` "1985"
+
+    describe "Part b" $ do
+      it "parses the same input to 5DB3" $ do
+        decodePIN diamondKeypad sample `shouldBe` "5DB3"

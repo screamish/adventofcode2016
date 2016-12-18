@@ -47,8 +47,8 @@ spec = do
     describe "Part 2 - first to visit twice" $ do
       describe "Finding first twice" $ do
         it "1,2,3,4,2,3,5 is 2" $ do
-          firstDuplicate [1,2,3,4,2,3,5] `shouldBe` Just 2
+          firstDuplicate ([1,2,3,4,2,3,5]::[Int]) `shouldBe` Just 2
         it "1,2,3,4,5,6,3,5 is 3" $ do
-          firstDuplicate [1,2,3,4,5,6,3,5] `shouldBe` Just 3
+          firstDuplicate ([1,2,3,4,5,6,3,5]::[Int]) `shouldBe` Just 3
       it "if your instructions are R8, R4, R4, R8, the first location you visit twice is 4 blocks away, due East." $ do
         bunny' (parseMovements "R8, R4, R4, R8") `shouldBe` Just (4,0)
