@@ -23,6 +23,7 @@ dependencies:
   - base >=4.7 && <5
   - containers
   - interpolatedstring-perl6
+  - lens
   - megaparsec
   - non-empty-sequence
   - text
@@ -32,6 +33,7 @@ library:
   ghc-options: []
   exposed-modules:
     - Advent.Day1
+    - Advent.Day2
 
 executables:
   advent2016:
