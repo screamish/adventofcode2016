@@ -2,7 +2,6 @@
 {-# LANGUAGE LambdaCase #-}
 module Advent.Day3 where
 
-import Control.Monad (join)
 import Data.List (transpose)
 import Data.List.Split (chunksOf)
 import Data.Maybe (mapMaybe)
@@ -13,8 +12,8 @@ import Text.Megaparsec.Lexer (integer)
 import Text.Megaparsec.Text
 
 parseOrFail :: Monad m => Parser (m a) -> Text -> m a
-parseOrFail parser input =
-  case runParser parser "" $ input of
+parseOrFail parser i =
+  case runParser parser "" $ i of
     Left err -> fail . parseErrorPretty $ err
     Right x -> x
 
