@@ -10,7 +10,7 @@ license: MIT
 github: screamish/advent2016
 extra-source-files:
   - README.md
-ghc-options: -Wall -Werror
+ghc-options: -Wall
 
 default-extensions:
   - OverloadedStrings
@@ -26,6 +26,7 @@ dependencies:
   - lens
   - megaparsec
   - non-empty-sequence
+  - split
   - text
 
 library:
@@ -34,6 +35,7 @@ library:
   exposed-modules:
     - Advent.Day1
     - Advent.Day2
+    - Advent.Day3
 
 executables:
   advent2016:

@@ -8,6 +8,7 @@ import Data.Monoid
 import Text.InterpolatedString.Perl6 (q)
 import qualified Advent.Day1 as D1
 import qualified Advent.Day2 as D2
+import qualified Advent.Day3 as D3
 
 
 main :: IO ()
@@ -28,5 +29,6 @@ ULURLRDLRUDLLDUDDRUUULULUDDDDDRRDRULUDRRUDLRRRLUDLRUULRDDRRLRUDLUDULRULLUURLLRLL
   print $ "Day 2a: PIN is " <> twoA
   let twoB = D2.decodePIN D2.diamondKeypad $ input2
   print $ "Day 2b: PIN is " <> twoB
-  -- let (Just p2) = D1.bunny' . D1.parseMovements $ input
-  -- print $ show p2 <> " is the first duplicate visited, which is " <> (show $ dist p2) <> " away."
+
+  print $ "Day 3a: " <> show D3.partA <> " valid triangles"
+  print $ "Day 3b: " <> show D3.partB <> " valid triangles vertically"
