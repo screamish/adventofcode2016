@@ -10,6 +10,7 @@ import qualified Advent.Day1 as D1
 import qualified Advent.Day2 as D2
 import qualified Advent.Day3 as D3
 import qualified Advent.Day4 as D4
+import qualified Advent.Day5 as D5
 
 main :: IO ()
 main = do
@@ -35,3 +36,5 @@ ULURLRDLRUDLLDUDDRUUULULUDDDDDRRDRULUDRRUDLRRRLUDLRUULRDDRRLRUDLUDULRULLUURLLRLL
 
   print $ "Day 4a: " <> show D4.partA <> " is the sum of sectorIds of the real rooms."
   print $ "Day 4b: The northpole storage room is in sector " <> D4.partB
+
+  print $ "Day 5a: " <> D5.partA <> " is the password."
