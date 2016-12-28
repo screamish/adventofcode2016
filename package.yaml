@@ -36,6 +36,7 @@ library:
     - Advent.Day1
     - Advent.Day2
     - Advent.Day3
+    - Advent.Day4
 
 executables:
   advent2016:

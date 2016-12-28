@@ -4,12 +4,13 @@
 
 module Main where
 
+import Data.Foldable
 import Data.Monoid
 import Text.InterpolatedString.Perl6 (q)
 import qualified Advent.Day1 as D1
 import qualified Advent.Day2 as D2
 import qualified Advent.Day3 as D3
-
+import qualified Advent.Day4 as D4
 
 main :: IO ()
 main = do
@@ -32,3 +33,6 @@ ULURLRDLRUDLLDUDDRUUULULUDDDDDRRDRULUDRRUDLRRRLUDLRUULRDDRRLRUDLUDULRULLUURLLRLL
 
   print $ "Day 3a: " <> show D3.partA <> " valid triangles"
   print $ "Day 3b: " <> show D3.partB <> " valid triangles vertically"
+
+  print $ "Day 4a: " <> show D4.partA <> " is the sum of sectorIds of the real rooms."
+  print $ "Day 4b: The northpole storage room is in sector " <> D4.partB
