@@ -6,9 +6,10 @@ import Test.Hspec
 
 import Advent.Day5
 
-spec :: Spec
-spec = do
-
+-- | Deliberately not called spec to avoid being picked up
+-- by Hspec discover, since it's an expensive (CPU) spec to run
+expensiveSpec :: Spec
+expensiveSpec = do
   describe "Day5" $ do
   --- Day 5: How About a Nice Game of Chess? ---
 
