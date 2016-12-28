@@ -4,7 +4,6 @@
 
 module Main where
 
-import Data.Foldable
 import Data.Monoid
 import Text.InterpolatedString.Perl6 (q)
 import qualified Advent.Day1 as D1
