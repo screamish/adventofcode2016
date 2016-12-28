@@ -58,7 +58,7 @@ isReal Room{..} =
 sectorIdSum :: Text -> Integer
 sectorIdSum i =
   case parse' rooms i of
-    Left err -> 0
+    Left _   -> 0
     Right rs -> sum . fmap _sectorId . filter isReal $ rs
 
 partA :: Integer
