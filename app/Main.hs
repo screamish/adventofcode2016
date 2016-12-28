@@ -38,3 +38,4 @@ ULURLRDLRUDLLDUDDRUUULULUDDDDDRRDRULUDRRUDLRRRLUDLRUULRDDRRLRUDLUDULRULLUURLLRLL
   print $ "Day 4b: The northpole storage room is in sector " <> D4.partB
 
   print $ "Day 5a: " <> D5.partA <> " is the password."
+  print $ "Day 5b: " <> D5.partB <> " is the password via the more complex decryption method."
