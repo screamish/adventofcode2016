@@ -67,7 +67,7 @@ decodePIN pad@Keypad{..} =
 
 diamondKeypad :: Keypad
 diamondKeypad = Keypad {
-    _keys = Map.fromList $ ikeys ^.. (itraversed<.>itraversed) . filtered (/= ' ' ) . to (\x -> [x]) . packed . withIndex
+    _keys = Map.fromList $ ikeys ^.. (itraversed<.>itraversed) . filtered (/= ' ' ) . to (: []) . packed . withIndex
   , _start = (3,1) -- the 5 key
   }
   where
